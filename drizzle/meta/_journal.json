@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1747660643862,
+      "tag": "0000_lying_dazzler",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1747834105083,
+      "tag": "0001_vengeful_odin",
+      "breakpoints": true
+    }
+  ]
+}

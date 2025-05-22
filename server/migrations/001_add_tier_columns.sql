@@ -1,0 +1,5 @@
+-- Add TIER referral columns to edic_screenings table
+ALTER TABLE edic_screenings
+ADD COLUMN IF NOT EXISTS tier_ii_motor BOOLEAN DEFAULT FALSE,
+ADD COLUMN IF NOT EXISTS tier_ii_cst BOOLEAN DEFAULT FALSE,
+ADD COLUMN IF NOT EXISTS tier_iii BOOLEAN DEFAULT FALSE; 
