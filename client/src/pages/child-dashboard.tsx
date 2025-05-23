@@ -60,7 +60,7 @@ function getPassFailBadge(status: string | null | undefined) {
 }
 
 export default function ChildDashboardPage() {
-  const [, params] = useParams();
+  const [match, params] = useParams<{ id: string }>();
   const childId = params?.id;
   const [activeTab, setActiveTab] = useState("profile");
   const { toast } = useToast();
