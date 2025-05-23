@@ -60,21 +60,22 @@ function getPassFailBadge(status: string | null | undefined) {
 }
 
 export default function ChildDashboardPage() {
-  const { id } = useParams();
+  const [, params] = useParams();
+  const childId = params?.id;
   const [activeTab, setActiveTab] = useState("profile");
   const { toast } = useToast();
   const [, navigate] = useLocation();
 
   // Query to fetch child data
   const { data: childData, isLoading: childLoading, error: childError } = useQuery<Child>({
-    queryKey: [`/api/children/${id}`],
-    enabled: !!id,
+    queryKey: [`/api/children/${childId}`],
+    enabled: !!childId,
   });
 
   // Query to fetch screenings for this child
   const { data: screenings, isLoading: screeningsLoading, error: screeningsError } = useQuery<Screening[]>({
-    queryKey: ["/api/screenings", { childId: parseInt(id || "0") }],
-    enabled: !!id,
+    queryKey: ["/api/screenings", { childId: parseInt(childId || "0") }],
+    enabled: !!childId,
   });
 
   const isLoading = childLoading || screeningsLoading;
