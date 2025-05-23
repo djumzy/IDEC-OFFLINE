@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const API_URL = "https://idec-offline.onrender.com";
+
 export const api = axios.create({
-  baseURL: "/api",
+  baseURL: `${API_URL}/api`,
   headers: {
     "Content-Type": "application/json",
   },
@@ -14,4 +16,4 @@ api.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
-}); 
+});
